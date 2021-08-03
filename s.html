@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <title>multass</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <link rel="stylesheet" href="./assets/css/main.css" /> {{!--
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css" /> --}}
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+</head>
+
+<body class="homepage is-preload">
+    <table class="table table-dark table-hover">
+        <thead>
+            <tr class="table-info">
+                <th scope="row">Nombre del Repartidor</th>
+                <th scope="row">Email</th>
+                <th scope="row">Fecha</th>
+                <th scope="row">Ganancia Total del Día</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each multasso}}
+            <tr class="table-info">
+                <th class="text-center">{{this.usuario}}</th>
+                <th class="text-center">{{this.clave}}</th>
+                <th class="text-center">{{this.correo}}</th>
+                <th class="text-center">{{this.id_socios_pk}}</th>
+            </tr>
+            {{/each}}
+
+        </tbody>
+    </table>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/jquery.dropotron.min.js"></script>
+    <script src="assets/js/browser.min.js"></script>
+    <script src="assets/js/breakpoints.min.js"></script>
+    <script src="assets/js/util.js"></script>
+    <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

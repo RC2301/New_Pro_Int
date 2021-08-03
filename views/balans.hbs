@@ -1,0 +1,209 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>ZeroFour by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header-wrapper">
+					<div class="container">
+
+						<!-- Header -->
+							<header id="header">
+								<div class="inner">
+
+									<!-- Logo -->
+										<h1><a href="#" id="logo">Socio</a></h1>
+
+									<!-- Nav -->
+										<nav id="nav">
+											<ul>
+                        <li><a href="/multass">Multas</a></li>
+                        <li><a href="http://127.0.0.1:5000/s">Turnos</a></li>
+												<li><a href="/home">Cerrar Sesión </a></li>
+											</ul>
+										</nav>
+
+								</div>
+							</header>
+
+						<!-- Banner -->
+							<div id="banner">
+								<h2><strong>Balance de Resultados</strong>
+								<br />
+								Gestión de Ingresos-Egresos de la compañía de taxis Quitumbe S.A</h2>
+							</div>
+					</div>
+				</div>
+
+			<!-- Main Wrapper -->
+				<div id="main-wrapper">
+					<div class="wrapper style1">
+						<div class="inner">
+
+							<!-- Feature 1 -->
+								<section class="container box feature1">
+									<div class="row">
+                                        <div class="col-12">
+											<header class="first major">
+												<table class="table table-dark table-hover">
+                                    <thead>
+                                        <tr class="table-info">                  
+                                            <th scope="row">Socio</th>
+                                            <th scope="row">Tipo</th>
+                                            <th scope="row">Monto del Balance</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        {{#each balanso}}
+                                        <tr class="table-info">
+                                            <th class="text-center">{{this.na}}</th>
+                                            <th class="text-center">{{this.tipo}}</th>
+                                            <th class="text-center">${{this.monto_balance}}</th>
+                                        </tr>
+                                        {{/each}}
+                                                                              
+                                    </tbody>
+                                </table>
+											</header>
+										</div>
+										<div class="col-12">
+											<header class="first major">
+												<a href="#" class="image featured"><img src="images/res.jpeg" alt="" /></a>
+											</header>
+										</div>
+										<div class="col-4 col-12-medium">
+											<section>
+												<a href="#" class="image featured"><img src="images/sev1.jpeg" alt="" /></a>
+													<h3>Servicio de aplicación móvil </h3>
+												</header>
+											</section>
+										</div>
+										<div class="col-4 col-12-medium">
+											<section>
+												<a href="#" class="image featured"><img src="images/sev2.jpeg" alt="" /></a>
+													<h3>Servicio puerta a puerta 24/7</h3>
+												</header>
+											</section>
+										</div>
+										<div class="col-4 col-12-medium">
+											<section>
+												<a href="#" class="image featured"><img src="images/sev3.jpg" alt="" /></a>
+													<h3>Servicio de recorrido y viajes </h3>
+												</header>
+											</section>
+										</div>
+										<div class="col-12">
+											<p>Somo una empresa de taxis reconocida, dedicada a brindar un servicio de calidad al cliente,
+												contamos con choferes altamente capacitados que permitirán al usuario sentirse tranquilo
+												y seguro durante su viaje.</p>
+										</div>
+									</div>
+								</section>
+						</div>
+					</div>
+					<div class="wrapper style2">
+						<div class="inner">
+
+							<!-- Feature 2 -->
+								<section class="container box feature2">
+									<div class="row">
+										<div class="col-6 col-12-medium">
+											<section>
+												<header class="major">
+													<h2>Misión</h2>
+												</header>
+												<p>Somos una Compañia de Taxis que brindamos el servicio de transporte, cómodo y seguro a
+                          nuestros clientes en las mejores condiciones posibles, ofreciendo
+                          un ambiente de armonia y calidad, basados en el respeto, la integración y el trabajo
+													en equipo, generando rentabilidad para nuestros socios</p>
+												<footer>
+												</footer>
+											</section>
+										</div>
+										<div class="col-6 col-12-medium">
+											<section>
+												<header class="major">
+													<h2>Visión</h2>
+												</header>
+												<p>Sobre la base de la constitución de nuestra Compañía de Taxis Quitumbe S A, tenemos como
+                           visión ser la mejor opción de taxis convencionales en nuestro sector</p>
+												<footer>
+												</footer>
+											</section>
+										</div>
+									</div>
+								</section>
+							</div>
+					</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			<!-- Footer Wrapper -->
+				<div id="footer-wrapper">
+					<footer id="footer" class="container">
+						<div class="row">
+							<div class="col-3 col-6-medium col-12-small">
+
+								<!-- Links -->
+								<section>
+									<h2>Contáctanos</h2>
+									<div>
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<dl class="contact">
+													<dt>Teléfonos</dt>
+													<dd><a href="#">(02)2670447-0992735614</a></dd>
+													<dt>Facebook</dt>
+													<dd><a href="#">QUITUMBE</a></dd>
+													<dt>Dirección</dt>
+													<dd><a href="#">Barrio: AYMESA Calle: S35D Número: E1-331</a></dd>
+													<dt>Email</dt>
+													<dd><a href="#">companiqs2020@gmail.com</a></dd>
+												</dl>
+											</div>
+											<div class="col-6 col-12-small">
+											</div>
+										</div>
+									</div>
+								</section>
+
+							</div>
+							<div class="col-3 col-6-medium col-12-small">
+
+
+							</div>
+							<div class="col-12">
+								<div id="copyright">
+									<ul class="menu">
+										<li>&copy; Untitled. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</footer>
+				</div>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
