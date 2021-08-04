@@ -1,4 +1,4 @@
-onst { Pool } = require('pg');
+const { Pool } = require('pg');
 
 const config = {
     // host: 'localhost',
