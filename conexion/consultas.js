@@ -84,11 +84,10 @@
       }
   }
 
-  const insertM = async(fecha) => {
+  const insertM = async(fecha, motivo, monto_multa, id_usuario_pk) => {
       try {
-          const consulta = `INSERT INTO public.tb_perfil(perfil)VALUES ('${fecha}');')`
+          const consulta = `INSERT INTO public.tb_multa(fecha, motivo, monto_multa, id_usuario_pk)VALUES ('${fecha}','${motivo}','${monto_multa}',${id_usuario_pk});')`
           const res = await pool.query(consulta);
-
           //   if (res.rowCount == 1) {
           //       return "Usuario registrado";
           //   } else
@@ -106,6 +105,5 @@
       getbalan,
       getbalans,
       getsocios,
-      insertMulta,
-      insertM
+      insertMulta
   }
