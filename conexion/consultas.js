@@ -61,6 +61,42 @@
           return error.message;
       }
   }
+  const getsocios = async() => {
+      try {
+          const res = await pool.query(`select id_socios_pk,na from tb_socios`);
+          return res.rows;
+
+      } catch (error) {
+          return error.message;
+      }
+  }
+
+  const insertMulta = async(fecha, motivo, monto_multa, id_usuario_pk) => {
+      try {
+          const consulta = `INSERT INTO public.tb_multa(fecha, motivo, monto_multa, id_usuario_pk)VALUES ('${fecha}','${motivo}','${monto_multa}',${id_usuario_pk});')`
+          const res = await pool.query(consulta);
+          //   if (res.rowCount == 1) {
+          //       return "Usuario registrado";
+          //   } else
+          //       return "No existe el Usuario";
+      } catch (error) {
+          return error.message;
+      }
+  }
+
+  const insertM = async(fecha) => {
+      try {
+          const consulta = `INSERT INTO public.tb_perfil(perfil)VALUES ('${fecha}');')`
+          const res = await pool.query(consulta);
+
+          //   if (res.rowCount == 1) {
+          //       return "Usuario registrado";
+          //   } else
+          //       return "No existe el Usuario";
+      } catch (error) {
+          return error.message;
+      }
+  }
 
   module.exports = {
       authUser,
@@ -68,5 +104,8 @@
       getMultass,
       getMultas,
       getbalan,
-      getbalans
+      getbalans,
+      getsocios,
+      insertMulta,
+      insertM
   }

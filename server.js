@@ -14,7 +14,9 @@ const {
     getMultass,
     getMultas,
     getbalan,
-    getbalans
+    getbalans,
+    getsocios,
+    insertMulta
 } = require("./conexion/consultas");
 const port = process.env.PORT || 3000;
 
@@ -47,6 +49,10 @@ app.get('/login', function(req, res) {
 });
 
 app.post('/auth', async(req, res) => {
+    // var dateTime = require('node-datetime');
+    // var dt = dateTime.create();
+    // dt.format('m/d/Y H:M:S');
+    // console.log(new Date(dt.now()));
     const user = req.body.user;
     const pass = req.body.pass;
     //let passhash = await bcryptjs.hash(pass, 8);
@@ -118,21 +124,59 @@ app.get('/multass', async(req, res) => {
     }
 });
 
+
+
 app.get('/multas', async(req, res) => {
     if (req.session.loggedinAdmin) {
         let user = req.session.user;
         //console.log(localTime);
         let multaso = await getMultas();
+        let gsocios = await getsocios();
         //console.log(repartidores.length);
         res.render('multas', {
             login: true,
             titulo: 'multas',
-            multaso
+            multaso,
+            gsocios
             //gandi: gananciadia[0].ganancia_total
         });
     } else {
         res.redirect('/')
     }
+});
+
+app.post('/regmult', async(req, res) => {
+    if (req.session.loggedinAdmin) {
+        var dateTime = require('node-datetime');
+        var dt = dateTime.create();
+        dt.format('m/d/Y H:M:S');
+        console.log(new Date(dt.now()));
+
+        const user = {
+            motivo: req.body.motivo,
+            monto_multa: req.body.monto_multa,
+            id_usuario_pk: req.body.gsocios
+        };
+        console.log(user.motivo);
+        console.log(user.monto_multa);
+        console.log(user.id_usuario_pk);
+        var fecha = new Date(dt.now())
+        await insertMulta(fecha, user.motivo, user.monto_multa, user.id_usuario_pk).then(resp =>
+            res.render('multas', {
+                alert: true,
+                alertTitle: 'Registrado Correctamente',
+                alertMessage: resp,
+                icon: 'success',
+                timer: 1700,
+                ruta: 'multas'
+            }));
+    } else {
+        res.redirect('/')
+    }
+    // req.session.loggedinAdmin = TRUE
+    // Insertar en la base de datos y mensaje
+    //let passhash = await bcryptjs.hash(user.pass, 8);
+
 });
 
 
@@ -201,7 +245,7 @@ app.get('/balans', async(req, res) => {
     }
 });
 
-// app.get('/data', (req, res) => {
+// a                pp.get('/data', (req, res) => {
 //     res.send('data');
 // });
 
